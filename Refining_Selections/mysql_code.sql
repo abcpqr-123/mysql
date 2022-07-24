@@ -910,6 +910,118 @@ mysql>
 
 
 
+Copyright (c) 2000, 2022, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> SOURCE Refining_Selections/exercises.sql
+ERROR 1046 (3D000): No database selected
+mysql>
+mysql> SHOW DATABASES;
++--------------------+
+| Database           |
++--------------------+
+| book_shop          |
+| cat_app            |
+| information_schema |
+| mysql              |
+| people             |
+| performance_schema |
+| shirts_db          |
+| sys                |
++--------------------+
+8 rows in set (0.04 sec)
+
+mysql> use book_shop
+Database changed
+mysql> SOURCE Refining_Selections/exercises.sql
++-----------------------------------------------------+---------------+----------------+
+| title                                               | released_year | stock_quantity |
++-----------------------------------------------------+---------------+----------------+
+| Where I'm Calling From: Selected Stories            |          1989 |             12 |
+| American Gods                                       |          2001 |             12 |
+| What We Talk About When We Talk About Love: Stories |          1981 |             23 |
++-----------------------------------------------------+---------------+----------------+
+3 rows in set (0.01 sec)
+
+mysql> SOURCE Refining_Selections/exercises.sql
++-----------------------------------------------------+----------------+
+| title                                               | author_lname   |
++-----------------------------------------------------+----------------+
+| What We Talk About When We Talk About Love: Stories | Carver         |
+| Where I'm Calling From: Selected Stories            | Carver         |
+| The Amazing Adventures of Kavalier & Clay           | Chabon         |
+| White Noise                                         | DeLillo        |
+| A Heartbreaking Work of Staggering Genius           | Eggers         |
+| A Hologram for the King: A Novel                    | Eggers         |
+| The Circle                                          | Eggers         |
+| Consider the Lobster                                | Foster Wallace |
+| Oblivion: Stories                                   | Foster Wallace |
+| American Gods                                       | Gaiman         |
+| Coraline                                            | Gaiman         |
+| Norse Mythology                                     | Gaiman         |
+| 10% Happier                                         | Harris         |
+| fake_book                                           | Harris         |
+| Interpreter of Maladies                             | Lahiri         |
+| The Namesake                                        | Lahiri         |
+| Lincoln In The Bardo                                | Saunders       |
+| Just Kids                                           | Smith          |
+| Cannery Row                                         | Steinbeck      |
++-----------------------------------------------------+----------------+
+19 rows in set (0.02 sec)
+
+mysql> SOURCE Refining_Selections/exercises.sql\
+ERROR:
+Failed to open file 'Refining_Selections\exercises.sql\', error: 22
+mysql> SOURCE Refining_Selections/exercises.sql
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'CONACAT ('MY FAVOURITE AUTHOR IS ', author_lname)FROM books AS 'yell'' at line 1
+mysql> SOURCE Refining_Selections/exercises.sql
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''yell'' at line 1
+mysql> SOURCE Refining_Selections/exercises.sql
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')
+    FROM books
+    AS 'yell'' at line 6
+mysql> SOURCE Refining_Selections/exercises.sql
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')
+    AS 'yell'
+    FROM books' at line 6
+mysql> SOURCE Refining_Selections/exercises.sql
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')
+    AS yell
+    FROM books' at line 6
+mysql> SOURCE Refining_Selections/exercises.sql
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')
+    AS yell
+    FROM books ORDER BY author_lname' at line 8
+mysql> SOURCE Refining_Selections/exercises.sql
++----------------------------------------------+
+| yell                                         |
++----------------------------------------------+
+| MY FAVOURITE AUTHOR IS RAYMOND CARVER!       |
+| MY FAVOURITE AUTHOR IS RAYMOND CARVER!       |
+| MY FAVOURITE AUTHOR IS MICHAEL CHABON!       |
+| MY FAVOURITE AUTHOR IS DON DELILLO!          |
+| MY FAVOURITE AUTHOR IS DAVE EGGERS!          |
+| MY FAVOURITE AUTHOR IS DAVE EGGERS!          |
+| MY FAVOURITE AUTHOR IS DAVE EGGERS!          |
+| MY FAVOURITE AUTHOR IS DAVID FOSTER WALLACE! |
+| MY FAVOURITE AUTHOR IS DAVID FOSTER WALLACE! |
+| MY FAVOURITE AUTHOR IS NEIL GAIMAN!          |
+| MY FAVOURITE AUTHOR IS NEIL GAIMAN!          |
+| MY FAVOURITE AUTHOR IS NEIL GAIMAN!          |
+| MY FAVOURITE AUTHOR IS DAN HARRIS!           |
+| MY FAVOURITE AUTHOR IS FREIDA HARRIS!        |
+| MY FAVOURITE AUTHOR IS JHUMPA LAHIRI!        |
+| MY FAVOURITE AUTHOR IS JHUMPA LAHIRI!        |
+| MY FAVOURITE AUTHOR IS GEORGE SAUNDERS!      |
+| MY FAVOURITE AUTHOR IS PATTI SMITH!          |
+| MY FAVOURITE AUTHOR IS JOHN STEINBECK!       |
++----------------------------------------------+
+19 rows in set (0.00 sec)
 
 
 
