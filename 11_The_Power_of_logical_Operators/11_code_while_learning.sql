@@ -11,5 +11,6 @@ CREATE TABLE orders(
     order_date DATE,
     amount DECIMAL(8,2),
     customer_id INT,
-    FORIGN KEY(customer_id) REFERENCES customers(id)
+    FOREIGN KEY(customer_id) REFERENCES customers(id)
 );
+
