@@ -67,7 +67,37 @@ ORDER BY total_spent DESC;
 SELECT * FROM customers 
 LEFT JOIN orders
    ON customers.id = orders.customer_id;
-   
+
 SELECT first_name, last_name, order_date, amount FROM customers
 LEFT JOIN orders
    ON customers.id = orders.customer_id;
+
+
+
+ SELECT first_name, last_name, order_date, SUM(amount) FROM customers
+     LEFT JOIN orders
+        ON customers.id = orders.customer_id
+     GROUP BY customers.id;  
+
+-- Replace NUM by zero. 
+
+ SELECT first_name,
+        last_name,
+        order_date, 
+        IFNULL(SUM(amount), 0) AS total_spent
+        FROM customers
+     LEFT JOIN orders
+        ON customers.id = orders.customer_id
+     GROUP BY customers.id
+     ORDER BY total_spent;
+
+
+
+
+
+
+     --RIGHT JOIN
+
+     SELECT * FROM customers
+     INNER JOIN orders
+            ON customers.id =  orders.customer_id;
