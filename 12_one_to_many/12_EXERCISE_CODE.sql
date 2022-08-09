@@ -595,9 +595,13 @@ mysql> SELECT
 +------------+---------+----------------+
 4 rows in set (0.00 sec)
 
-mysql>
 
 
+
+
+
+
+-- EXERCISE 5
 
 
 
