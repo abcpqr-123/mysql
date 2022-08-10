@@ -1,4 +1,13 @@
+mysql>
 mysql> instagearam
+    ->
+    ->
+    ->
+    ->
+    ->
+    ->
+    ->
+    ->
     ->
     ->
     -> ^C
@@ -476,4 +485,454 @@ Records: 5  Duplicates: 0  Warnings: 0
 mysql> INSERT INTO LIKES(user_id, photo_id) VALUES (1,1);
 ERROR 1062 (23000): Duplicate entry '1-1' for key 'likes.PRIMARY'
 mysql>
+mysql>
+mysql>
+mysql>
+mysql>
+mysql>
+mysql>
+mysql>
+mysql>
+mysql>
+mysql>
+mysql>
+mysql>
+mysql> \\\\\^C
+mysql>
+mysql>
+mysql> CREATE TABLE follows (
+    -> ^C
+mysql> source 14_Instagram_clone/14_ig_clone.sql;
+Query OK, 4 rows affected (0.13 sec)
 
+Query OK, 1 row affected (0.01 sec)
+
+Database changed
+Query OK, 0 rows affected (0.04 sec)
+
+Query OK, 0 rows affected (0.04 sec)
+
+Query OK, 0 rows affected (0.07 sec)
+
+Query OK, 0 rows affected (0.04 sec)
+
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '(follower_id, followee_id)
+)' at line 7
+Query OK, 3 rows affected (0.01 sec)
+Records: 3  Duplicates: 0  Warnings: 0
+
+Query OK, 3 rows affected (0.01 sec)
+Records: 3  Duplicates: 0  Warnings: 0
+
+Query OK, 3 rows affected (0.01 sec)
+Records: 3  Duplicates: 0  Warnings: 0
+
+Query OK, 5 rows affected (0.01 sec)
+Records: 5  Duplicates: 0  Warnings: 0
+
+mysql> source 14_Instagram_clone/14_ig_clone.sql;
+Query OK, 4 rows affected (0.11 sec)
+
+Query OK, 1 row affected (0.01 sec)
+
+Database changed
+Query OK, 0 rows affected (0.04 sec)
+
+Query OK, 0 rows affected (0.04 sec)
+
+Query OK, 0 rows affected (0.06 sec)
+
+Query OK, 0 rows affected (0.04 sec)
+
+Query OK, 0 rows affected (0.05 sec)
+
+Query OK, 3 rows affected (0.01 sec)
+Records: 3  Duplicates: 0  Warnings: 0
+
+Query OK, 3 rows affected (0.01 sec)
+Records: 3  Duplicates: 0  Warnings: 0
+
+Query OK, 3 rows affected (0.01 sec)
+Records: 3  Duplicates: 0  Warnings: 0
+
+Query OK, 5 rows affected (0.01 sec)
+Records: 5  Duplicates: 0  Warnings: 0
+
+mysql> DESC followers;
+ERROR 1146 (42S02): Table 'ig_clone.followers' doesn't exist
+mysql> DESC follows;
++-------------+-----------+------+-----+-------------------+-------------------+
+| Field       | Type      | Null | Key | Default           | Extra             |
++-------------+-----------+------+-----+-------------------+-------------------+
+| follower_id | int       | NO   | PRI | NULL              |                   |
+| followee_id | int       | NO   | PRI | NULL              |                   |
+| created_at  | timestamp | YES  |     | CURRENT_TIMESTAMP | DEFAULT_GENERATED |
++-------------+-----------+------+-----+-------------------+-------------------+
+3 rows in set (0.03 sec)
+
+mysql> source 14_Instagram_clone/14_ig_clone.sql;
+Query OK, 5 rows affected (0.10 sec)
+
+Query OK, 1 row affected (0.01 sec)
+
+Database changed
+Query OK, 0 rows affected (0.04 sec)
+
+Query OK, 0 rows affected (0.04 sec)
+
+Query OK, 0 rows affected (0.05 sec)
+
+Query OK, 0 rows affected (0.04 sec)
+
+Query OK, 0 rows affected (0.04 sec)
+
+Query OK, 3 rows affected (0.01 sec)
+Records: 3  Duplicates: 0  Warnings: 0
+
+Query OK, 3 rows affected (0.00 sec)
+Records: 3  Duplicates: 0  Warnings: 0
+
+Query OK, 3 rows affected (0.00 sec)
+Records: 3  Duplicates: 0  Warnings: 0
+
+Query OK, 5 rows affected (0.01 sec)
+Records: 5  Duplicates: 0  Warnings: 0
+
+Query OK, 4 rows affected (0.01 sec)
+Records: 4  Duplicates: 0  Warnings: 0
+
+mysql> SELECT * FROM FOLLOWS;
++-------------+-------------+---------------------+
+| follower_id | followee_id | created_at          |
++-------------+-------------+---------------------+
+|           1 |           2 | 2022-08-09 22:22:45 |
+|           1 |           3 | 2022-08-09 22:22:45 |
+|           2 |           3 | 2022-08-09 22:22:45 |
+|           3 |           1 | 2022-08-09 22:22:45 |
++-------------+-------------+---------------------+
+4 rows in set (0.00 sec)
+
+mysql> INSERT INTO follows (follower_id, followee_id) VALUES (1,3);
+ERROR 1062 (23000): Duplicate entry '1-3' for key 'follows.PRIMARY'
+mysql> source 14_Instagram_clone/14_ig_clone.sql;
+Query OK, 5 rows affected (0.12 sec)
+
+Query OK, 1 row affected (0.01 sec)
+
+Database changed
+Query OK, 0 rows affected (0.04 sec)
+
+Query OK, 0 rows affected (0.04 sec)
+
+Query OK, 0 rows affected (0.04 sec)
+
+Query OK, 0 rows affected (0.06 sec)
+
+Query OK, 0 rows affected (0.05 sec)
+
+Query OK, 3 rows affected (0.01 sec)
+Records: 3  Duplicates: 0  Warnings: 0
+
+Query OK, 3 rows affected (0.01 sec)
+Records: 3  Duplicates: 0  Warnings: 0
+
+Query OK, 3 rows affected (0.01 sec)
+Records: 3  Duplicates: 0  Warnings: 0
+
+Query OK, 5 rows affected (0.01 sec)
+Records: 5  Duplicates: 0  Warnings: 0
+
+Query OK, 4 rows affected (0.01 sec)
+Records: 4  Duplicates: 0  Warnings: 0
+
+Query OK, 1 row affected (0.00 sec)
+
+mysql> SELECT * FROM follows;
++-------------+-------------+---------------------+
+| follower_id | followee_id | created_at          |
++-------------+-------------+---------------------+
+|           1 |           2 | 2022-08-10 00:32:16 |
+|           1 |           3 | 2022-08-10 00:32:16 |
+|           2 |           1 | 2022-08-10 00:32:16 |
+|           2 |           3 | 2022-08-10 00:32:16 |
+|           3 |           1 | 2022-08-10 00:32:16 |
++-------------+-------------+---------------------+
+5 rows in set (0.00 sec)
+
+mysql> source 14_Instagram_clone/14_ig_clone.sql;\
+Query OK, 5 rows affected (0.14 sec)
+
+Query OK, 1 row affected (0.01 sec)
+
+Database changed
+Query OK, 0 rows affected (0.07 sec)
+
+Query OK, 0 rows affected (0.05 sec)
+
+Query OK, 0 rows affected (0.06 sec)
+
+Query OK, 0 rows affected (0.05 sec)
+
+Query OK, 0 rows affected (0.05 sec)
+
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AUTO_ICREMENT PRIMARY KEY,
+    tag_name VARCHAR(255) UNIQUE,
+    created_at TIME' at line 2
+ERROR 1824 (HY000): Failed to open the referenced table 'tags'
+Query OK, 3 rows affected (0.01 sec)
+Records: 3  Duplicates: 0  Warnings: 0
+
+Query OK, 3 rows affected (0.01 sec)
+Records: 3  Duplicates: 0  Warnings: 0
+
+Query OK, 3 rows affected (0.01 sec)
+Records: 3  Duplicates: 0  Warnings: 0
+
+Query OK, 5 rows affected (0.01 sec)
+Records: 5  Duplicates: 0  Warnings: 0
+
+Query OK, 4 rows affected (0.01 sec)
+Records: 4  Duplicates: 0  Warnings: 0
+
+Query OK, 1 row affected (0.00 sec)
+
+mysql> source 14_Instagram_clone/14_ig_clone.sql;\
+Query OK, 5 rows affected (0.13 sec)
+
+Query OK, 1 row affected (0.01 sec)
+
+Database changed
+Query OK, 0 rows affected (0.04 sec)
+
+Query OK, 0 rows affected (0.04 sec)
+
+Query OK, 0 rows affected (0.04 sec)
+
+Query OK, 0 rows affected (0.05 sec)
+
+Query OK, 0 rows affected (0.04 sec)
+
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AUTO_ICREMENT PRIMARY KEY,
+    tag_name VARCHAR(255) UNIQUE
+    created_at TIMES' at line 2
+ERROR 1824 (HY000): Failed to open the referenced table 'tags'
+Query OK, 3 rows affected (0.01 sec)
+Records: 3  Duplicates: 0  Warnings: 0
+
+Query OK, 3 rows affected (0.01 sec)
+Records: 3  Duplicates: 0  Warnings: 0
+
+Query OK, 3 rows affected (0.01 sec)
+Records: 3  Duplicates: 0  Warnings: 0
+
+Query OK, 5 rows affected (0.01 sec)
+Records: 5  Duplicates: 0  Warnings: 0
+
+Query OK, 4 rows affected (0.01 sec)
+Records: 4  Duplicates: 0  Warnings: 0
+
+Query OK, 1 row affected (0.00 sec)
+
+mysql> source 14_Instagram_clone/14_ig_clone.sql;
+Query OK, 5 rows affected (0.13 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Database changed
+Query OK, 0 rows affected (0.04 sec)
+
+Query OK, 0 rows affected (0.04 sec)
+
+Query OK, 0 rows affected (0.09 sec)
+
+Query OK, 0 rows affected (0.06 sec)
+
+Query OK, 0 rows affected (0.05 sec)
+
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AUTO_ICREMENT PRIMARY KEY,
+    tag_name VARCHAR(255) UNIQUE
+    created_at TIMES' at line 2
+ERROR 1824 (HY000): Failed to open the referenced table 'tags'
+Query OK, 3 rows affected (0.01 sec)
+Records: 3  Duplicates: 0  Warnings: 0
+
+Query OK, 3 rows affected (0.00 sec)
+Records: 3  Duplicates: 0  Warnings: 0
+
+Query OK, 3 rows affected (0.01 sec)
+Records: 3  Duplicates: 0  Warnings: 0
+
+Query OK, 5 rows affected (0.01 sec)
+Records: 5  Duplicates: 0  Warnings: 0
+
+Query OK, 4 rows affected (0.01 sec)
+Records: 4  Duplicates: 0  Warnings: 0
+
+Query OK, 1 row affected (0.00 sec)
+
+mysql> source 14_Instagram_clone/14_ig_clone.sql;
+Query OK, 5 rows affected (0.09 sec)
+
+Query OK, 1 row affected (0.01 sec)
+
+Database changed
+Query OK, 0 rows affected (0.05 sec)
+
+Query OK, 0 rows affected (0.04 sec)
+
+Query OK, 0 rows affected (0.05 sec)
+
+Query OK, 0 rows affected (0.04 sec)
+
+Query OK, 0 rows affected (0.04 sec)
+
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AUTO_ICREMENT PRIMARY KEY,
+    tag_name VARCHAR(255) UNIQUE,
+    created_at TIME' at line 2
+ERROR 1824 (HY000): Failed to open the referenced table 'tags'
+Query OK, 3 rows affected (0.01 sec)
+Records: 3  Duplicates: 0  Warnings: 0
+
+Query OK, 3 rows affected (0.01 sec)
+Records: 3  Duplicates: 0  Warnings: 0
+
+Query OK, 3 rows affected (0.01 sec)
+Records: 3  Duplicates: 0  Warnings: 0
+
+Query OK, 5 rows affected (0.01 sec)
+Records: 5  Duplicates: 0  Warnings: 0
+
+Query OK, 4 rows affected (0.01 sec)
+Records: 4  Duplicates: 0  Warnings: 0
+
+Query OK, 1 row affected (0.00 sec)
+
+mysql> source 14_Instagram_clone/14_ig_clone.sql;
+Query OK, 5 rows affected (0.12 sec)
+
+Query OK, 1 row affected (0.01 sec)
+
+Database changed
+Query OK, 0 rows affected (0.06 sec)
+
+Query OK, 0 rows affected (0.05 sec)
+
+Query OK, 0 rows affected (0.05 sec)
+
+Query OK, 0 rows affected (0.04 sec)
+
+Query OK, 0 rows affected (0.04 sec)
+
+Query OK, 0 rows affected (0.04 sec)
+
+Query OK, 0 rows affected (0.04 sec)
+
+Query OK, 3 rows affected (0.01 sec)
+Records: 3  Duplicates: 0  Warnings: 0
+
+Query OK, 3 rows affected (0.01 sec)
+Records: 3  Duplicates: 0  Warnings: 0
+
+Query OK, 3 rows affected (0.01 sec)
+Records: 3  Duplicates: 0  Warnings: 0
+
+Query OK, 5 rows affected (0.01 sec)
+Records: 5  Duplicates: 0  Warnings: 0
+
+Query OK, 4 rows affected (0.01 sec)
+Records: 4  Duplicates: 0  Warnings: 0
+
+Query OK, 1 row affected (0.00 sec)
+
+mysql> source 14_Instagram_clone/14_ig_clone.sql;
+Query OK, 7 rows affected (0.17 sec)
+
+Query OK, 1 row affected (0.01 sec)
+
+Database changed
+Query OK, 0 rows affected (0.04 sec)
+
+Query OK, 0 rows affected (0.04 sec)
+
+Query OK, 0 rows affected (0.06 sec)
+
+Query OK, 0 rows affected (0.04 sec)
+
+Query OK, 0 rows affected (0.04 sec)
+
+Query OK, 0 rows affected (0.04 sec)
+
+Query OK, 0 rows affected (0.05 sec)
+
+Query OK, 3 rows affected (0.00 sec)
+Records: 3  Duplicates: 0  Warnings: 0
+
+Query OK, 3 rows affected (0.01 sec)
+Records: 3  Duplicates: 0  Warnings: 0
+
+Query OK, 3 rows affected (0.01 sec)
+Records: 3  Duplicates: 0  Warnings: 0
+
+Query OK, 5 rows affected (0.00 sec)
+Records: 5  Duplicates: 0  Warnings: 0
+
+Query OK, 4 rows affected (0.01 sec)
+Records: 4  Duplicates: 0  Warnings: 0
+
+Query OK, 1 row affected (0.00 sec)
+
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '('sunrise')' at line 4
+ERROR 1452 (23000): Cannot add or update a child row: a foreign key constraint fails (`ig_clone`.`photo_tags`, CONSTRAINT `photo_tags_ibfk_2` FOREIGN KEY (`tag_id`) REFERENCES `tags` (`id`))
+mysql> source 14_Instagram_clone/14_ig_clone.sql;
+Query OK, 7 rows affected (0.16 sec)
+
+Query OK, 1 row affected (0.01 sec)
+
+Database changed
+Query OK, 0 rows affected (0.04 sec)
+
+Query OK, 0 rows affected (0.05 sec)
+
+Query OK, 0 rows affected (0.04 sec)
+
+Query OK, 0 rows affected (0.04 sec)
+
+Query OK, 0 rows affected (0.06 sec)
+
+Query OK, 0 rows affected (0.04 sec)
+
+Query OK, 0 rows affected (0.06 sec)
+
+Query OK, 3 rows affected (0.01 sec)
+Records: 3  Duplicates: 0  Warnings: 0
+
+Query OK, 3 rows affected (0.01 sec)
+Records: 3  Duplicates: 0  Warnings: 0
+
+Query OK, 3 rows affected (0.01 sec)
+Records: 3  Duplicates: 0  Warnings: 0
+
+Query OK, 5 rows affected (0.01 sec)
+Records: 5  Duplicates: 0  Warnings: 0
+
+Query OK, 4 rows affected (0.01 sec)
+Records: 4  Duplicates: 0  Warnings: 0
+
+Query OK, 1 row affected (0.01 sec)
+
+Query OK, 3 rows affected (0.01 sec)
+Records: 3  Duplicates: 0  Warnings: 0
+
+Query OK, 4 rows affected (0.01 sec)
+Records: 4  Duplicates: 0  Warnings: 0
+
+mysql> SELECT * FROM photo_tags;
++----------+--------+
+| photo_id | tag_id |
++----------+--------+
+|        1 |      1 |
+|        1 |      2 |
+|        3 |      2 |
+|        2 |      3 |
++----------+--------+
+4 rows in set (0.00 sec)
