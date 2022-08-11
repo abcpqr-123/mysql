@@ -200,3 +200,127 @@ AS AVG;
 
 
 
+-- 6. Five Most Popular Hashtags
+
+SELECT *
+   FROM photo_tags
+   JOIN tags 
+      ON photo_tags.tag_id = tags.id;
+
+SELECT *
+   FROM photo_tags
+   JOIN tags 
+      ON photo_tags.tag_id = tags.id
+    GROUP BY tags.id;
+
+SELECT
+tags.tag_name,
+COUNT(*)
+   FROM photo_tags
+   JOIN tags 
+      ON photo_tags.tag_id = tags.id
+    GROUP BY tags.id;
+
+
+
+SELECT
+tags.tag_name,
+COUNT(*) AS total
+   FROM photo_tags
+   JOIN tags 
+      ON photo_tags.tag_id = tags.id
+    GROUP BY tags.id
+    ORDER BY total DESC
+    LIMIT 5;
+
+
+
+
+-- MY CODE
+SELECT tags.id AS ID,
+tags.tag_name,
+COUNT(*) AS toal_Use
+FROM tags 
+INNER JOIN photo_tags
+ON photo_tags.tag_id = tags.id
+GROUP BY tags.id
+ORDER BY ID DESC
+LIMIT 5;
+
+
+
+
+-- 7. Finding Bots - users who have liked every single photo
+
+SELECT * 
+FROM users
+INNER JOIN likes 
+ON users.id = likes.user_id;
+
+
+SELECT * 
+FROM users
+INNER JOIN likes 
+ON users.id = likes.user_id;
+GROUP BY likes.user_id;
+
+
+SELECT 
+username,
+user_id
+FROM users
+INNER JOIN likes 
+ON users.id = likes.user_id
+GROUP BY likes.user_id;
+
+
+
+SELECT 
+username,
+user_id,
+COUNT(*) AS num_likes
+FROM users
+INNER JOIN likes 
+ON users.id = likes.user_id
+GROUP BY likes.user_id
+
+-- USED NEW KEY WORD - HAVING!
+--  BEACUSE, WHERE num_likes = 257 cannot work, beacuse it should come before 
+--  GROUP BY.
+
+SELECT 
+username,
+user_id,
+COUNT(*) AS num_likes
+FROM users
+INNER JOIN likes 
+ON users.id = likes.user_id
+GROUP BY likes.user_id
+HAVING num_likes = 257;
+
+
+-- ===============
+-- note:  the above code is hard coded- 257  
+--        to solve that problem we can write the solution like this,
+
+SELECT 
+username,
+user_id,
+COUNT(*) AS num_likes
+FROM users
+INNER JOIN likes 
+ON users.id = likes.user_id
+GROUP BY likes.user_id
+HAVING num_likes = (SELECT COUNT(*) FROM photos);
+
+
+
+
+--my code
+SELECT users.id, 
+users.username,
+COUNT(*) AS total_likes
+FROM users 
+INNER JOIN likes
+   ON users.id = likes.user_id
+GROUP BY users.id;
