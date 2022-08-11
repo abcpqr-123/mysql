@@ -2842,3 +2842,633 @@ mysql> SELECT photos.id, photos.image_url, likes.user_id
 |  21 | https://lisa.com       |      33 |
 |  21 | https://lisa.com       |      36 |
 |  21 | https://lisa.com       |      37 |
+
+
+
+
+
+
+
+mysql>
+mysql> SELECT *
+    ->    FROM photo_tags
+    ->    JOIN tags
+    ->       ON photo_tags.tag_id = tags.id;
++----------+--------+----+-------------+---------------------+
+| photo_id | tag_id | id | tag_name    | created_at          |
++----------+--------+----+-------------+---------------------+
+|       14 |      1 |  1 | sunset      | 2022-08-10 16:55:16 |
+|       21 |      1 |  1 | sunset      | 2022-08-10 16:55:16 |
+|       45 |      1 |  1 | sunset      | 2022-08-10 16:55:16 |
+|       75 |      1 |  1 | sunset      | 2022-08-10 16:55:16 |
+|       83 |      1 |  1 | sunset      | 2022-08-10 16:55:16 |
+|       85 |      1 |  1 | sunset      | 2022-08-10 16:55:16 |
+|       91 |      1 |  1 | sunset      | 2022-08-10 16:55:16 |
+|      118 |      1 |  1 | sunset      | 2022-08-10 16:55:16 |
+|      149 |      1 |  1 | sunset      | 2022-08-10 16:55:16 |
+|      194 |      1 |  1 | sunset      | 2022-08-10 16:55:16 |
+|      201 |      1 |  1 | sunset      | 2022-08-10 16:55:16 |
+|      210 |      1 |  1 | sunset      | 2022-08-10 16:55:16 |
+|      216 |      1 |  1 | sunset      | 2022-08-10 16:55:16 |
+|      227 |      1 |  1 | sunset      | 2022-08-10 16:55:16 |
+|      231 |      1 |  1 | sunset      | 2022-08-10 16:55:16 |
+|      233 |      1 |  1 | sunset      | 2022-08-10 16:55:16 |
+|      238 |      1 |  1 | sunset      | 2022-08-10 16:55:16 |
+|      242 |      1 |  1 | sunset      | 2022-08-10 16:55:16 |
+|      243 |      1 |  1 | sunset      | 2022-08-10 16:55:16 |
+|        2 |      2 |  2 | photography | 2022-08-10 16:55:16 |
+|       10 |      2 |  2 | photography | 2022-08-10 16:55:16 |
+|       38 |      2 |  2 | photography | 2022-08-10 16:55:16 |
+|       62 |      2 |  2 | photography | 2022-08-10 16:55:16 |
+|      110 |      2 |  2 | photography | 2022-08-10 16:55:16 |
+|      126 |      2 |  2 | photography | 2022-08-10 16:55:16 |
+|      149 |      2 |  2 | photography | 2022-08-10 16:55:16 |
+|      201 |      2 |  2 | photography | 2022-08-10 16:55:16 |
+|      209 |      2 |  2 | photography | 2022-08-10 16:55:16 |
+|      210 |      2 |  2 | photography | 2022-08-10 16:55:16 |
+|      220 |      2 |  2 | photography | 2022-08-10 16:55:16 |
+|      227 |      2 |  2 | photography | 2022-08-10 16:55:16 |
+|      233 |      2 |  2 | photography | 2022-08-10 16:55:16 |
+|      238 |      2 |  2 | photography | 2022-08-10 16:55:16 |
+|      242 |      2 |  2 | photography | 2022-08-10 16:55:16 |
+|      254 |      2 |  2 | photography | 2022-08-10 16:55:16 |
+|        2 |      3 |  3 | sunrise     | 2022-08-10 16:55:16 |
+|       21 |      3 |  3 | sunrise     | 2022-08-10 16:55:16 |
+|       38 |      3 |  3 | sunrise     | 2022-08-10 16:55:16 |
+|       45 |      3 |  3 | sunrise     | 2022-08-10 16:55:16 |
+|       83 |      3 |  3 | sunrise     | 2022-08-10 16:55:16 |
+|       85 |      3 |  3 | sunrise     | 2022-08-10 16:55:16 |
+|       91 |      3 |  3 | sunrise     | 2022-08-10 16:55:16 |
+|      126 |      3 |  3 | sunrise     | 2022-08-10 16:55:16 |
+|      201 |      3 |  3 | sunrise     | 2022-08-10 16:55:16 |
+
+
+
+
+
+
+mysql>
+mysql> SELECT *
+    ->    FROM photo_tags
+    ->    JOIN tags
+    ->       ON photo_tags.tag_id = tags.id;
++----------+--------+----+-------------+---------------------+
+| photo_id | tag_id | id | tag_name    | created_at          |
++----------+--------+----+-------------+---------------------+
+|       14 |      1 |  1 | sunset      | 2022-08-10 16:55:16 |
+|       21 |      1 |  1 | sunset      | 2022-08-10 16:55:16 |
+|       45 |      1 |  1 | sunset      | 2022-08-10 16:55:16 |
+|       75 |      1 |  1 | sunset      | 2022-08-10 16:55:16 |
+|       83 |      1 |  1 | sunset      | 2022-08-10 16:55:16 |
+|       85 |      1 |  1 | sunset      | 2022-08-10 16:55:16 |
+|       91 |      1 |  1 | sunset      | 2022-08-10 16:55:16 |
+|      118 |      1 |  1 | sunset      | 2022-08-10 16:55:16 |
+|      149 |      1 |  1 | sunset      | 2022-08-10 16:55:16 |
+|      194 |      1 |  1 | sunset      | 2022-08-10 16:55:16 |
+|      201 |      1 |  1 | sunset      | 2022-08-10 16:55:16 |
+|      210 |      1 |  1 | sunset      | 2022-08-10 16:55:16 |
+|      216 |      1 |  1 | sunset      | 2022-08-10 16:55:16 |
+|      227 |      1 |  1 | sunset      | 2022-08-10 16:55:16 |
+|      231 |      1 |  1 | sunset      | 2022-08-10 16:55:16 |
+|      233 |      1 |  1 | sunset      | 2022-08-10 16:55:16 |
+|      238 |      1 |  1 | sunset      | 2022-08-10 16:55:16 |
+|      242 |      1 |  1 | sunset      | 2022-08-10 16:55:16 |
+|      243 |      1 |  1 | sunset      | 2022-08-10 16:55:16 |
+|        2 |      2 |  2 | photography | 2022-08-10 16:55:16 |
+|       10 |      2 |  2 | photography | 2022-08-10 16:55:16 |
+|       38 |      2 |  2 | photography | 2022-08-10 16:55:16 |
+|       62 |      2 |  2 | photography | 2022-08-10 16:55:16 |
+|      110 |      2 |  2 | photography | 2022-08-10 16:55:16 |
+|      126 |      2 |  2 | photography | 2022-08-10 16:55:16 |
+|      149 |      2 |  2 | photography | 2022-08-10 16:55:16 |
+|      201 |      2 |  2 | photography | 2022-08-10 16:55:16 |
+|      209 |      2 |  2 | photography | 2022-08-10 16:55:16 |
+|      210 |      2 |  2 | photography | 2022-08-10 16:55:16 |
+|      220 |      2 |  2 | photography | 2022-08-10 16:55:16 |
+|      227 |      2 |  2 | photography | 2022-08-10 16:55:16 |
+|      233 |      2 |  2 | photography | 2022-08-10 16:55:16 |
+|      238 |      2 |  2 | photography | 2022-08-10 16:55:16 |
+|      242 |      2 |  2 | photography | 2022-08-10 16:55:16 |
+|      254 |      2 |  2 | photography | 2022-08-10 16:55:16 |
+|        2 |      3 |  3 | sunrise     | 2022-08-10 16:55:16 |
+|       21 |      3 |  3 | sunrise     | 2022-08-10 16:55:16 |
+|       38 |      3 |  3 | sunrise     | 2022-08-10 16:55:16 |
+|       45 |      3 |  3 | sunrise     | 2022-08-10 16:55:16 |
+|       83 |      3 |  3 | sunrise     | 2022-08-10 16:55:16 |
+|       85 |      3 |  3 | sunrise     | 2022-08-10 16:55:16 |
+|       91 |      3 |  3 | sunrise     | 2022-08-10 16:55:16 |
+|      126 |      3 |  3 | sunrise     | 2022-08-10 16:55:16 |
+|      201 |      3 |  3 | sunrise     | 2022-08-10 16:55:16 |
+
+
+
+
+
+
+mysql>     GROUP BY tags.id;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'GROUP BY tags.id' at line 1
+mysql> ^S^C
+mysql>
+mysql> SELECT
+    -> tags.tag_name,
+    -> COUNT(*)
+    ->    FROM photo_tags
+    ->    JOIN tags
+    ->       ON photo_tags.tag_id = tags.id;
++----------+----------+
+| tag_name | COUNT(*) |
++----------+----------+
+| beach    |      501 |
++----------+----------+
+1 row in set (0.00 sec)
+
+mysql> SELECT
+    -> tags.tag_name,
+    -> COUNT(*)
+    ->    FROM photo_tags
+    ->    JOIN tags
+    ->       ON photo_tags.tag_id = tags.id
+    ->     GROUP BY tags.id;
++-------------+----------+
+| tag_name    | COUNT(*) |
++-------------+----------+
+| sunset      |       19 |
+| photography |       16 |
+| sunrise     |       17 |
+| landscape   |       17 |
+| food        |       24 |
+| foodie      |       11 |
+| delicious   |       15 |
+| beauty      |       20 |
+| stunning    |       16 |
+| dreamy      |       20 |
+| lol         |       24 |
+| happy       |       22 |
+| fun         |       38 |
+| style       |       17 |
+| hair        |       23 |
+| fashion     |       19 |
+| party       |       39 |
+| concert     |       24 |
+| drunk       |       19 |
+| beach       |       42 |
+| smile       |       59 |
++-------------+----------+
+21 rows in set (0.00 sec)
+
+mysql> SELECT
+    -> tags.tag_name,
+    -> COUNT(*)
+    ->    FROM photo_tags
+    ->    JOIN tags
+    ->       ON photo_tags.tag_id = tags.id
+    ->     GROUP BY tags.id
+    ->     ORDER BY total DESC
+    ->     LIMIT 5;
+ERROR 1054 (42S22): Unknown column 'total' in 'order clause'
+mysql>
+mysql> SELECT
+    -> tags.tag_name,
+    -> COUNT(*) AS total
+    ->    FROM photo_tags
+    ->    JOIN tags
+    ->       ON photo_tags.tag_id = tags.id
+    ->     GROUP BY tags.id
+    ->     ORDER BY total DESC
+    ->     LIMIT 5;
++----------+-------+
+| tag_name | total |
++----------+-------+
+| smile    |    59 |
+| beach    |    42 |
+| party    |    39 |
+| fun      |    38 |
+| concert  |    24 |
++----------+-------+
+5 rows in set (0.00 sec)
+
+
+
+
+mysql>
+mysql> SELECT user.id, user.username
+    -> FROM users
+    -> COUNT(*) AS total_likes
+    -> INNER JOIN likes
+    ->    ON user.id = likes.user_id
+    -> GROUP BY user.id;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'COUNT(*) AS total_likes
+INNER JOIN likes
+   ON user.id = likes.user_id
+GROUP BY ' at line 3
+mysql> SELECT user.id,
+    -> user.username,
+    -> FROM users
+    -> COUNT(*) AS total_likes
+    -> INNER JOIN likes
+    ->    ON user.id = likes.user_id
+    -> GROUP BY user.id;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'FROM users
+COUNT(*) AS total_likes
+INNER JOIN likes
+   ON user.id = likes.user_' at line 3
+mysql> SELECT tags.id AS ID,
+    -> tags.tag_name
+    -> COUNT(*) AS toal_Use
+    -> FROM tags
+    -> INNER JOIN photo_tags
+    -> ON photo_tags.tag_id = tags.id
+    -> GROUP BY tags.id
+    -> ORDER BY ID DESC
+    -> LIMIT 5;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'COUNT(*) AS toal_Use
+FROM tags
+INNER JOIN photo_tags
+ON photo_tags.tag_id = tag' at line 3
+mysql> SELECT tags.id AS ID,
+    -> tags.tag_name,
+    -> COUNT(*) AS toal_Use
+    -> FROM tags
+    -> INNER JOIN photo_tags
+    -> ON photo_tags.tag_id = tags.id
+    -> GROUP BY tags.id
+    -> ORDER BY ID DESC
+    -> LIMIT 5;
++----+----------+----------+
+| ID | tag_name | toal_Use |
++----+----------+----------+
+| 21 | smile    |       59 |
+| 20 | beach    |       42 |
+| 19 | drunk    |       19 |
+| 18 | concert  |       24 |
+| 17 | party    |       39 |
++----+----------+----------+
+5 rows in set (0.00 sec)
+
+mysql> SELECT user.id,
+    -> user.username,
+    -> COUNT(*) AS total_likes
+    -> FROM users
+    -> INNER JOIN likes
+    ->    ON user.id = likes.user_id
+    -> GROUP BY user.id;
+ERROR 1054 (42S22): Unknown column 'user.id' in 'field list'
+mysql> SELECT users.id,
+    -> users.username,
+    -> COUNT(*) AS total_likes
+    -> FROM users
+    -> INNER JOIN likes
+    ->    ON users.id = likes.user_id
+    -> GROUP BY users.id;
++-----+-----------------------+-------------+
+| id  | username              | total_likes |
++-----+-----------------------+-------------+
+|   2 | Andre_Purdy85         |          94 |
+|   3 | Harley_Lind18         |          79 |
+|   4 | Arely_Bogan63         |          93 |
+|   5 | Aniya_Hackett         |         257 |
+|   6 | Travon.Waters         |          82 |
+|   8 | Tabitha_Schamberger11 |          79 |
+|   9 | Gus93                 |          85 |
+|  10 | Presley_McClure       |          87 |
+|  11 | Justina.Gaylord27     |          89 |
+|  12 | Dereck65              |          77 |
+|  13 | Alexandro35           |          93 |
+|  14 | Jaclyn81              |         257 |
+|  15 | Billy52               |          84 |
+|  16 | Annalise.McKenzie16   |         103 |
+|  17 | Norbert_Carroll35     |          78 |
+|  18 | Odessa2               |          82 |
+|  19 | Hailee26              |          90 |
+|  20 | Delpha.Kihn           |          87 |
+|  21 | Rocio33               |         257 |
+|  22 | Kenneth64             |          91 |
+|  24 | Maxwell.Halvorson     |         257 |
+|  26 | Josianne.Friesen      |          94 |
+|  27 | Darwin29              |          79 |
+|  28 | Dario77               |          77 |
+|  30 | Kaley9                |          81 |
+|  31 | Aiyana_Hoeger         |          88 |
+|  32 | Irwin.Larson          |          91 |
+|  33 | Yvette.Gottlieb91     |          77 |
+|  35 | Lennie_Hartmann40     |          92 |
+|  36 | Ollie_Ledner37        |         257 |
+|  37 | Yazmin_Mills95        |          84 |
+|  38 | Jordyn.Jacobson2      |          85 |
+|  39 | Kelsi26               |          89 |
+|  40 | Rafael.Hickle2        |          85 |
+|  41 | Mckenna17             |         257 |
+|  42 | Maya.Farrell          |          87 |
+|  43 | Janet.Armstrong       |          86 |
+|  44 | Seth46                |          86 |
+|  46 | Malinda_Streich       |          88 |
+|  47 | Harrison.Beatty50     |          76 |
+|  48 | Granville_Kutch       |          75 |
+|  50 | Gerard79              |          81 |
+|  52 | Zack_Kemmer93         |          85 |
+|  54 | Duane60               |         257 |
+|  55 | Meggie_Doyle          |          78 |
+|  56 | Peter.Stehr0          |          81 |
+|  57 | Julien_Schmidt        |         257 |
+|  60 | Sam52                 |          86 |
+|  61 | Jayson65              |          83 |
+|  62 | Ressie_Stanton46      |          88 |
+|  63 | Elenor88              |          83 |
+|  65 | Adelle96              |          96 |
+|  66 | Mike.Auer39           |         257 |
+|  67 | Emilio_Bernier52      |          86 |
+|  69 | Karley_Bosco          |          97 |
+|  70 | Erick5                |          88 |
+|  71 | Nia_Haag              |         257 |
+|  72 | Kathryn80             |          85 |
+|  73 | Jaylan.Lakin          |          86 |
+|  75 | Leslie67              |         257 |
+|  76 | Janelle.Nikolaus81    |         257 |
+|  78 | Colten.Harris76       |          83 |
+|  79 | Katarina.Dibbert      |          75 |
+|  82 | Aracely.Johnston98    |          84 |
+|  84 | Alysa22               |          75 |
+|  85 | Milford_Gleichner42   |          87 |
+|  87 | Rick29                |          92 |
+|  91 | Bethany20             |         257 |
+|  92 | Frederik_Rice         |          91 |
+|  93 | Willie_Leuschke       |          91 |
+|  94 | Damon35               |          84 |
+|  95 | Nicole71              |          86 |
+|  96 | Keenan.Schamberger60  |          98 |
+|  97 | Tomas.Beatty93        |          69 |
+|  98 | Imani_Nicolas17       |          74 |
+|  99 | Alek_Watsica          |          74 |
+| 100 | Javonte83             |          82 |
++-----+-----------------------+-------------+
+77 rows in set (0.01 sec)
+
+mysql> SELECT
+    -> username,
+    -> user_id,
+    -> COUNT(*) AS total
+    -> FROM users
+    -> INNER JOIN likes
+    -> ON users.id = likes.user_id;
++----------+---------+-------+
+| username | user_id | total |
++----------+---------+-------+
+| Adelle96 |      65 |  8782 |
++----------+---------+-------+
+1 row in set (0.01 sec)
+
+mysql> SELECT
+    -> username,
+    -> user_id,
+    -> COUNT(*) AS total
+    -> FROM users
+    -> INNER JOIN likes
+    -> ON users.id = likes.user_id
+    -> GROUP BY likes.user_id;
++-----------------------+---------+-------+
+| username              | user_id | total |
++-----------------------+---------+-------+
+| Adelle96              |      65 |    96 |
+| Aiyana_Hoeger         |      31 |    88 |
+| Alek_Watsica          |      99 |    74 |
+| Alexandro35           |      13 |    93 |
+| Alysa22               |      84 |    75 |
+| Andre_Purdy85         |       2 |    94 |
+| Aniya_Hackett         |       5 |   257 |
+| Annalise.McKenzie16   |      16 |   103 |
+| Aracely.Johnston98    |      82 |    84 |
+| Arely_Bogan63         |       4 |    93 |
+| Bethany20             |      91 |   257 |
+| Billy52               |      15 |    84 |
+| Colten.Harris76       |      78 |    83 |
+| Damon35               |      94 |    84 |
+| Dario77               |      28 |    77 |
+| Darwin29              |      27 |    79 |
+| Delpha.Kihn           |      20 |    87 |
+| Dereck65              |      12 |    77 |
+| Duane60               |      54 |   257 |
+| Elenor88              |      63 |    83 |
+| Emilio_Bernier52      |      67 |    86 |
+| Erick5                |      70 |    88 |
+| Frederik_Rice         |      92 |    91 |
+| Gerard79              |      50 |    81 |
+| Granville_Kutch       |      48 |    75 |
+| Gus93                 |       9 |    85 |
+| Hailee26              |      19 |    90 |
+| Harley_Lind18         |       3 |    79 |
+| Harrison.Beatty50     |      47 |    76 |
+| Imani_Nicolas17       |      98 |    74 |
+| Irwin.Larson          |      32 |    91 |
+| Jaclyn81              |      14 |   257 |
+| Janelle.Nikolaus81    |      76 |   257 |
+| Janet.Armstrong       |      43 |    86 |
+| Javonte83             |     100 |    82 |
+| Jaylan.Lakin          |      73 |    86 |
+| Jayson65              |      61 |    83 |
+| Jordyn.Jacobson2      |      38 |    85 |
+| Josianne.Friesen      |      26 |    94 |
+| Julien_Schmidt        |      57 |   257 |
+| Justina.Gaylord27     |      11 |    89 |
+| Kaley9                |      30 |    81 |
+| Karley_Bosco          |      69 |    97 |
+| Katarina.Dibbert      |      79 |    75 |
+| Kathryn80             |      72 |    85 |
+| Keenan.Schamberger60  |      96 |    98 |
+| Kelsi26               |      39 |    89 |
+| Kenneth64             |      22 |    91 |
+| Lennie_Hartmann40     |      35 |    92 |
+| Leslie67              |      75 |   257 |
+| Malinda_Streich       |      46 |    88 |
+| Maxwell.Halvorson     |      24 |   257 |
+| Maya.Farrell          |      42 |    87 |
+| Mckenna17             |      41 |   257 |
+| Meggie_Doyle          |      55 |    78 |
+| Mike.Auer39           |      66 |   257 |
+| Milford_Gleichner42   |      85 |    87 |
+| Nia_Haag              |      71 |   257 |
+| Nicole71              |      95 |    86 |
+| Norbert_Carroll35     |      17 |    78 |
+| Odessa2               |      18 |    82 |
+| Ollie_Ledner37        |      36 |   257 |
+| Peter.Stehr0          |      56 |    81 |
+| Presley_McClure       |      10 |    87 |
+| Rafael.Hickle2        |      40 |    85 |
+| Ressie_Stanton46      |      62 |    88 |
+| Rick29                |      87 |    92 |
+| Rocio33               |      21 |   257 |
+| Sam52                 |      60 |    86 |
+| Seth46                |      44 |    86 |
+| Tabitha_Schamberger11 |       8 |    79 |
+| Tomas.Beatty93        |      97 |    69 |
+| Travon.Waters         |       6 |    82 |
+| Willie_Leuschke       |      93 |    91 |
+| Yazmin_Mills95        |      37 |    84 |
+| Yvette.Gottlieb91     |      33 |    77 |
+| Zack_Kemmer93         |      52 |    85 |
++-----------------------+---------+-------+
+77 rows in set (0.02 sec)
+
+mysql>
+mysql>
+mysql> SELECT
+    -> username,
+    -> user_id,
+    -> COUNT(*) AS num_likes
+    -> FROM users
+    -> INNER JOIN likes
+    -> ON users.id = likes.user_id
+    -> GROUP BY likes.user_id;
++-----------------------+---------+-----------+
+| username              | user_id | num_likes |
++-----------------------+---------+-----------+
+| Adelle96              |      65 |        96 |
+| Aiyana_Hoeger         |      31 |        88 |
+| Alek_Watsica          |      99 |        74 |
+| Alexandro35           |      13 |        93 |
+| Alysa22               |      84 |        75 |
+| Andre_Purdy85         |       2 |        94 |
+| Aniya_Hackett         |       5 |       257 |
+| Annalise.McKenzie16   |      16 |       103 |
+| Aracely.Johnston98    |      82 |        84 |
+| Arely_Bogan63         |       4 |        93 |
+| Bethany20             |      91 |       257 |
+| Billy52               |      15 |        84 |
+| Colten.Harris76       |      78 |        83 |
+| Damon35               |      94 |        84 |
+| Dario77               |      28 |        77 |
+| Darwin29              |      27 |        79 |
+| Delpha.Kihn           |      20 |        87 |
+| Dereck65              |      12 |        77 |
+| Duane60               |      54 |       257 |
+| Elenor88              |      63 |        83 |
+| Emilio_Bernier52      |      67 |        86 |
+| Erick5                |      70 |        88 |
+| Frederik_Rice         |      92 |        91 |
+| Gerard79              |      50 |        81 |
+| Granville_Kutch       |      48 |        75 |
+| Gus93                 |       9 |        85 |
+| Hailee26              |      19 |        90 |
+| Harley_Lind18         |       3 |        79 |
+| Harrison.Beatty50     |      47 |        76 |
+| Imani_Nicolas17       |      98 |        74 |
+| Irwin.Larson          |      32 |        91 |
+| Jaclyn81              |      14 |       257 |
+| Janelle.Nikolaus81    |      76 |       257 |
+| Janet.Armstrong       |      43 |        86 |
+| Javonte83             |     100 |        82 |
+| Jaylan.Lakin          |      73 |        86 |
+| Jayson65              |      61 |        83 |
+| Jordyn.Jacobson2      |      38 |        85 |
+| Josianne.Friesen      |      26 |        94 |
+| Julien_Schmidt        |      57 |       257 |
+| Justina.Gaylord27     |      11 |        89 |
+| Kaley9                |      30 |        81 |
+| Karley_Bosco          |      69 |        97 |
+| Katarina.Dibbert      |      79 |        75 |
+| Kathryn80             |      72 |        85 |
+| Keenan.Schamberger60  |      96 |        98 |
+| Kelsi26               |      39 |        89 |
+| Kenneth64             |      22 |        91 |
+| Lennie_Hartmann40     |      35 |        92 |
+| Leslie67              |      75 |       257 |
+| Malinda_Streich       |      46 |        88 |
+| Maxwell.Halvorson     |      24 |       257 |
+| Maya.Farrell          |      42 |        87 |
+| Mckenna17             |      41 |       257 |
+| Meggie_Doyle          |      55 |        78 |
+| Mike.Auer39           |      66 |       257 |
+| Milford_Gleichner42   |      85 |        87 |
+| Nia_Haag              |      71 |       257 |
+| Nicole71              |      95 |        86 |
+| Norbert_Carroll35     |      17 |        78 |
+| Odessa2               |      18 |        82 |
+| Ollie_Ledner37        |      36 |       257 |
+| Peter.Stehr0          |      56 |        81 |
+| Presley_McClure       |      10 |        87 |
+| Rafael.Hickle2        |      40 |        85 |
+| Ressie_Stanton46      |      62 |        88 |
+| Rick29                |      87 |        92 |
+| Rocio33               |      21 |       257 |
+| Sam52                 |      60 |        86 |
+| Seth46                |      44 |        86 |
+| Tabitha_Schamberger11 |       8 |        79 |
+| Tomas.Beatty93        |      97 |        69 |
+| Travon.Waters         |       6 |        82 |
+| Willie_Leuschke       |      93 |        91 |
+| Yazmin_Mills95        |      37 |        84 |
+| Yvette.Gottlieb91     |      33 |        77 |
+| Zack_Kemmer93         |      52 |        85 |
++-----------------------+---------+-----------+
+77 rows in set (0.02 sec)
+
+mysql>
+mysql> SELECT
+    -> username,
+    -> user_id,
+    -> COUNT(*) AS num_likes
+    -> FROM users
+    -> INNER JOIN likes
+    -> ON users.id = likes.user_id
+    -> GROUP BY likes.user_id
+    -> HAVING total = 257;
+ERROR 1054 (42S22): Unknown column 'total' in 'having clause'
+mysql> SELECT
+    -> username,
+    -> user_id,
+    -> COUNT(*) AS num_likes
+    -> FROM users
+    -> INNER JOIN likes
+    -> ON users.id = likes.user_id
+    -> GROUP BY likes.user_id
+    -> HAVING num_likes = 257;
++--------------------+---------+-----------+
+| username           | user_id | num_likes |
++--------------------+---------+-----------+
+| Aniya_Hackett      |       5 |       257 |
+| Bethany20          |      91 |       257 |
+| Duane60            |      54 |       257 |
+| Jaclyn81           |      14 |       257 |
+| Janelle.Nikolaus81 |      76 |       257 |
+| Julien_Schmidt     |      57 |       257 |
+| Leslie67           |      75 |       257 |
+| Maxwell.Halvorson  |      24 |       257 |
+| Mckenna17          |      41 |       257 |
+| Mike.Auer39        |      66 |       257 |
+| Nia_Haag           |      71 |       257 |
+| Ollie_Ledner37     |      36 |       257 |
+| Rocio33            |      21 |       257 |
++--------------------+---------+-----------+
+13 rows in set (0.03 sec)
+
+mysql>
+mysql> SELECT
+    -> username,
+    -> user_id,
+    -> COUNT(*) AS num_likes
+    -> FROM users
+    -> INNER JOIN likes
+    -> ON users.id = likes.user_id
+    -> GROUP BY likes.user_id
+    -> HAVING num_likes = (SELECT COUNT(*) FROM photos);
++--------------------+---------+-----------+
+| username           | user_id | num_likes |
++--------------------+---------+-----------+
+| Aniya_Hackett      |       5 |       257 |
+| Bethany20          |      91 |       257 |
+| Duane60            |      54 |       257 |
+| Jaclyn81           |      14 |       257 |
+| Janelle.Nikolaus81 |      76 |       257 |
+| Julien_Schmidt     |      57 |       257 |
+| Leslie67           |      75 |       257 |
+| Maxwell.Halvorson  |      24 |       257 |
+| Mckenna17          |      41 |       257 |
+| Mike.Auer39        |      66 |       257 |
+| Nia_Haag           |      71 |       257 |
+| Ollie_Ledner37     |      36 |       257 |
+| Rocio33            |      21 |       257 |
++--------------------+---------+-----------+
+13 rows in set (0.04 sec)
+
+
+
+
